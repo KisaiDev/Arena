@@ -1,0 +1,6 @@
+name: Arena
+version: '${project.version}'
+main: fr.misteryy.arena.Arena
+commands:
+  suicide:
+    description: permet de se suicide
