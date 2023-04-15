@@ -17,7 +17,7 @@ public class ScoreboardManager {
     }
     public void loadScoreboard(){
         for(Player player : Bukkit.getOnlinePlayers()){
-            sign.setObjectiveName("§6• §5§lARDAL §6•");
+            sign.setObjectiveName("§6• §5§lARENA §6•");
             sign.create();
         }
     }
