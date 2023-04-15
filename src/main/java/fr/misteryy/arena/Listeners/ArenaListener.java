@@ -29,9 +29,6 @@ public class ArenaListener implements Listener {
         player.setSaturation(20);
         player.teleport(new Location(Bukkit.getWorld("world"),181,117,-1277));
         player.playSound(player.getLocation(), Sound.ORB_PICKUP,1,1);
-        player.sendMessage("§8");
-        player.sendMessage("§l» Bienvenue sur  §7§lL' Arena  de §5Ardal§f!");
-        player.sendMessage("§f");
         player.getInventory().setItem(4,new ItemBuilder(Material.COMPASS,1).setName("§7Arene").setLore("§cPermet de ce tp \n","dans l'arene").setAmount(1).addEnchant(Enchantment.LURE,1).addFlag(ItemFlag.HIDE_ENCHANTS).toItemStack());
     }
 
