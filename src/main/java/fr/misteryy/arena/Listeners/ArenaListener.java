@@ -16,6 +16,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class ArenaListener implements Listener {
+    private Arena main;
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
         Player player = e.getPlayer();
@@ -24,9 +25,14 @@ public class ArenaListener implements Listener {
         }
         e.setJoinMessage("§7[§a+§7] §f" + e.getPlayer().getName());
         player.getInventory().clear();
+        
         player.setGameMode(GameMode.ADVENTURE);
         player.setHealth(20);
         player.setSaturation(20);
+        double x = main.getInstance().getConfig().getDouble("x");
+        double y = main.getInstance().getConfig().getDouble("y");
+        double z = main.getInstance().getConfig().getDouble("z");
+        Location loc = new Location(Bukkit.getWorlds(main.getInstance().get))
         player.teleport(new Location(Bukkit.getWorld("world"),181,117,-1277));
         player.playSound(player.getLocation(), Sound.ORB_PICKUP,1,1);
         player.getInventory().setItem(4,new ItemBuilder(Material.COMPASS,1).setName("§7Arene").setLore("§cPermet de ce tp \n","dans l'arene").setAmount(1).addEnchant(Enchantment.LURE,1).addFlag(ItemFlag.HIDE_ENCHANTS).toItemStack());
