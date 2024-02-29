@@ -16,7 +16,11 @@ public class SuicideCommands implements CommandExecutor {
         if(sender instanceof Player){
             Player player = (Player) sender;
             if(cmd.getName().equalsIgnoreCase("suicide")){
+                if(player.getHealth() > 20){
                 player.setHealth(0);
+                } else{
+                    player.sendMessage("§c§lVous avez pris des dégât vous ne pouvez pas utiliser cette commande.")
+                }
             }
         }
         return false;
